@@ -4,7 +4,7 @@ import videoRouter from "./video.routes.ts";
 const v1Router= express.Router();
 
 
-v1Router.use("/video", videoRouter);
+v1Router.use("/videos", videoRouter);
 
 
 v1Router.get("/ping", (_req: Request, res: Response)=> {
