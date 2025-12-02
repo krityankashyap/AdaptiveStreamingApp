@@ -18,9 +18,11 @@ export default function Videoupload() {
    console.log(file);
    try {
     const formData= new FormData();  // we can send the data in the form directly in the key:value pair
-    formData.append("video", file); //  we append the data where video is the key which we used in videoRouter backend with file as data
+    formData.append("videos", file); //  we append the data where video is the key which we used in videoRouter backend with file as data
 
-    const response= await axios.post('http://localhost:3001/api/v1/videos/upload' , formData, {
+    const response= await axios.post(
+      'http://localhost:3001/api/v1/videos/upload' ,
+      formData, {
       headers: {
         'Content-Type': 'multipart/form-data'  // Multipart upload is a method for uploading large files by splitting them into smaller, independent parts that can be uploaded in parallel
       }
@@ -40,7 +42,7 @@ export default function Videoupload() {
         
         <input
           type="file"
-          onChange={(e)=>{}}
+          onChange={handleFileUpload}
           className="block w-full text-sm text-gray-700 rounded-lg border border-gray-300 p-2 mt-2 cursor-pointer bg-gray-500 mb-4"
         />
       </div>

@@ -4,6 +4,6 @@ import upload from "../../middlewares/multer.middleware.ts";
 
 const videoRouter= express.Router();
 
-videoRouter.post("/upload", upload.single('video'), videoUploader);
+videoRouter.post("/upload", upload.single('videos'), videoUploader);
 
 export default videoRouter;
